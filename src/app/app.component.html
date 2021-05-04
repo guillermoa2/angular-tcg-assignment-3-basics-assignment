@@ -8,6 +8,16 @@
         <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrementing number)</li>
         <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
       </ol>
+      <hr>
+      <button class="btn btn-primary" (click)="paraToggle()">Display Details</button>
+      <p *ngIf="displayDetails">This is a parargraph. It is here because Max said to put it here. Tada!</p>
+      <hr>
+      <p 
+        *ngFor="let log of logs"
+        [ngClass]="{whiteLogs: this.log >= 5}"
+        [ngStyle]="{backgroundColor: getColor(this.log)}">
+        {{log}}
+      </p>
     </div>
   </div>
 </div>
