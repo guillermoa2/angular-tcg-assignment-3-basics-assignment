@@ -4,23 +4,18 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  styles: [`
-    .whiteLogs {
-      color: white;
-    }
-  `]
 })
 export class AppComponent {
-  displayDetails: boolean = true;
+  displayDetails: boolean = false;
   count: number = 1
-  logs: number[] = []
+  logs: Date[] = []
 
   paraToggle () {
     this.displayDetails = !this.displayDetails;
-    this.logs.push(this.count++)
+    this.logs.push(new Date())
   }
 
   getColor(log) {
-    return (log >= 5 ? "blue" : "white")
+    return (log >= 4 ? "blue" : "white")
   }
 }

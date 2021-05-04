@@ -13,9 +13,9 @@
       <p *ngIf="displayDetails">This is a parargraph. It is here because Max said to put it here. Tada!</p>
       <hr>
       <p 
-        *ngFor="let log of logs"
-        [ngClass]="{whiteLogs: this.log >= 5}"
-        [ngStyle]="{backgroundColor: getColor(this.log)}">
+        *ngFor="let log of logs; let i = index"
+        [ngClass]="{whiteLogs: i >= 4}"
+        [ngStyle]="{backgroundColor: getColor(i)}">
         {{log}}
       </p>
     </div>
